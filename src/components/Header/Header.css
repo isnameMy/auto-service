@@ -1,0 +1,191 @@
+/* src/components/Header/Header.css */
+.header {
+  background-color: var(--primary-dark-blue);
+  color: var(--text-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+/* Логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  color: var(--accent-orange);
+}
+
+/* Навигация */
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-orange);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--accent-orange);
+}
+
+/* Кнопка контактов */
+.header-contact-btn {
+  background: var(--accent-orange);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.header-contact-btn:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+/* Бургер-меню для мобильных */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.burger-line {
+  width: 25px;
+  height: 3px;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.burger-line:nth-child(1) {
+  transform-origin: bottom left;
+}
+
+.burger-line:nth-child(3) {
+  transform-origin: top left;
+}
+
+.burger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.burger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(-3px, 0);
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  display: none;
+  background: var(--primary-blue);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav-link {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link:hover {
+  color: var(--accent-orange);
+}
+
+.mobile-contact-btn {
+  display: block;
+  background: var(--accent-orange);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.mobile-contact-btn:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .nav,
+  .header-contact-btn {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}

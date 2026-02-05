@@ -1,0 +1,67 @@
+/* src/components/Prices/Prices.css */
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.price-category {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.price-category-title {
+  font-size: 1.4rem;
+  color: var(--primary-dark-blue);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--accent-orange);
+}
+
+.price-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.price-name {
+  color: #555;
+}
+
+.price-value {
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.price-note {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .prices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-category-title {
+    font-size: 1.2rem;
+  }
+}
